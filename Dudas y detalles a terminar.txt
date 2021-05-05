@@ -1,1 +1,6 @@
-- el cuadro de needs tiene signos de pregunta (¿) para terminar y consultar al ayudante
+FALTA : 
+
+	. Casos de uso.
+	. Diagrama de clases de alto nivel.
+	. Reformular documento de visión. 
+
