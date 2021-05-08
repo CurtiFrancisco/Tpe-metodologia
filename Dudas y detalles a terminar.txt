@@ -1,6 +1,3 @@
 FALTA : 
-
-	. Casos de uso.
-	. Diagrama de clases de alto nivel.
-	. Reformular documento de visión. 
+	. Casos de uso. 
 
