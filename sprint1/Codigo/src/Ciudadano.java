@@ -1,8 +1,13 @@
 
 public class Ciudadano {
 
-	String nombre, apellido, telefono, direccion ; 
-	int capacidad_transporte ;
+	private String nombre, apellido, telefono, direccion ; 
+	private int capacidad_transporte ;
+	private float distancia;
+	
+	private static final int LIMITETRANSPORTE = 3 ; 
+	private static final float LIMITEDISTANCIA = 6 ; 
+	
 	
 	public Ciudadano(String nombre, String apellido, String telefono, String direccion, int capacidad_transporte) {
 		super();
@@ -11,9 +16,15 @@ public class Ciudadano {
 		this.telefono = telefono;
 		this.direccion = direccion;
 		this.capacidad_transporte = capacidad_transporte;
+		this.distancia = calcularDistancia(this.direccion) ; 
 	}
 	
-	
+	//Devuelve la distancia entre la cooperativa y la direccion 
+	private float calcularDistancia(String direccion) {
+		return 0;
+	}
+
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -42,11 +53,28 @@ public class Ciudadano {
 		return capacidad_transporte;
 	}
 	public void setCapacidad_transporte(int capacidad_transporte) {
+		if (capacidad_transporte >= 0 && capacidad_transporte <= LIMITETRANSPORTE)
 		this.capacidad_transporte = capacidad_transporte;
+		
 	} 
 	
+	public boolean distanciaRequerida() {
+		return (distancia < LIMITEDISTANCIA) ;
+	}
 	
 	
+	//Se crea una clase solicitud de retiro que contiene los datos y se agrega a la lista
+	//Solamente en los casos donde la distancia se cumple
+	public boolean solicitarRetiro(Cooperativa c, int franjaInicio, int franjaFin) {
+		
+		if (this.distanciaRequerida()) {
+			SolicitudRetiro r = new SolicitudRetiro(franjaInicio, franjaFin, this, this.getCapacidad_transporte());
+			c.agregarSolicitud(r);
+			return true ; 
+		}
+		
+		return false ; 
+	}
 	
 	
 	
