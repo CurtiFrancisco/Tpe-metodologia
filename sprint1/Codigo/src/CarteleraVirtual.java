@@ -12,14 +12,14 @@ public class CarteleraVirtual {
 		materialesAceptados = new ArrayList<Material>() ; 
 	}
 
-
+/* Llevar al material 
 	public String getInfo() {
 		String aux = " " ; 
 		
 		for (Material e : materialesAceptados)
 			aux = aux + e.getNombre() + " \n " ; //chequear que \n separe la linea
 		
-		return info + " || Materiales aceptados : " + aux ;
+		return info + "\n || Materiales aceptados : " + aux ;
 		
 	}
 
@@ -30,7 +30,7 @@ public class CarteleraVirtual {
 	public void AppendInformacion(String info) {
 		this.info = this.info + " " + info ; 
 	}
-
+*/
 	//Materiales aceptados
 	
 	public void setMaterialesAceptados(ArrayList<Material> materialesAceptados) {

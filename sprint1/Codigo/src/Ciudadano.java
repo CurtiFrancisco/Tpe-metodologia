@@ -6,11 +6,10 @@ public class Ciudadano {
 	private float distancia;
 	
 	private static final int LIMITETRANSPORTE = 3 ; 
-	private static final float LIMITEDISTANCIA = 6 ; 
+	private static final float LIMITEDISTANCIA = 6 ; //El limite de distancia debe menor que 6 km 
 	
 	
 	public Ciudadano(String nombre, String apellido, String telefono, String direccion, int capacidad_transporte) {
-		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.telefono = telefono;
@@ -21,7 +20,7 @@ public class Ciudadano {
 	
 	//Devuelve la distancia entre la cooperativa y la direccion 
 	private float calcularDistancia(String direccion) {
-		return 0;
+		return 0; //alguien sabra como hacerlo 
 	}
 
 
