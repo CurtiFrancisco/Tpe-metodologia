@@ -15,7 +15,8 @@ public class Ciudadano {
 		this.telefono = telefono;
 		this.direccion_x = direccion_x;
 		this.direccion_y = direccion_y;
-		this.capacidad_transporte = capacidad_transporte;
+		if (capacidad_transporte >= 0 && capacidad_transporte <= LIMITETRANSPORTE)
+			this.capacidad_transporte = capacidad_transporte;
 
 	}
 
