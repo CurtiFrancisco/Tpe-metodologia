@@ -3,12 +3,35 @@ public class Material {
 	
 	private String nombre ; 
 	private float peso ;
+	private String descripcion ;
 	
-		public Material(String nombre, float peso) {
-		super();
+		
+
+	public Material(String nombre, float peso, String descripcion) {
+
 		this.nombre = nombre;
 		this.peso = peso;
+		this.descripcion = descripcion;
 	}
+
+	
+	
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	
+	public void agregarInformacion(String info) {
+		this.descripcion = this.descripcion + " " + info ; 
+	}
+	
+
 
 	public String getNombre() {
 		return nombre;
