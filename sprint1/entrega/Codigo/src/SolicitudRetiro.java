@@ -1,16 +1,16 @@
 
 public class SolicitudRetiro {
 	
-	int f_horaria_Inicio, f_horaria_Final ; 
-	Ciudadano c ; 
-	int opcion_retiro ;
+	private int fHorariaInicio, fHorariaFinal ; 
+	private Ciudadano ciudadano ; 
+	private int opcionRetiro ;
 	
 	
-	public SolicitudRetiro(int f_horaria_Inicio, int f_horaria_Final, Ciudadano c, int opcion_retiro) {
-		this.f_horaria_Inicio = f_horaria_Inicio;
-		this.f_horaria_Final = f_horaria_Final;
-		this.c = c;
-		this.opcion_retiro = opcion_retiro;
+	public SolicitudRetiro(int fHorariaInicio, int fHorariaFinal, Ciudadano c, int opcionRetiro) {
+		this.fHorariaInicio = fHorariaInicio;
+		this.fHorariaFinal = fHorariaFinal;
+		this.ciudadano = c;
+		this.opcionRetiro = opcionRetiro;
 	} 
 	
 	
