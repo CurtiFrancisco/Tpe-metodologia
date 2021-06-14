@@ -17,6 +17,8 @@ public class Ciudadano {
 		this.direccion_y = direccion_y;
 		if (capacidad_transporte >= 0 && capacidad_transporte <= LIMITETRANSPORTE)
 			this.capacidad_transporte = capacidad_transporte;
+		else
+			this.capacidad_transporte = 0 ; 
 
 	}
 
