@@ -1,3 +1,4 @@
+package Cooperativa;
 import java.util.HashMap;
 
 public class Cartonero {
@@ -15,8 +16,6 @@ public class Cartonero {
 		materiales = new HashMap<Material,Float>() ; 
 	}
 
-	
-	
 	
 	public String getNombre() {
 		return nombre;
@@ -57,4 +56,9 @@ public class Cartonero {
 	public void setCapacidadTransporte(int capacidadTransporte) {
 		this.capacidadTransporte = capacidadTransporte;
 	} 
+	
+	
+	
+	
+	
 }

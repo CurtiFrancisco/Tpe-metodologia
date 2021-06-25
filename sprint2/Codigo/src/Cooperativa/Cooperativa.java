@@ -1,3 +1,4 @@
+package Cooperativa;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -19,6 +20,17 @@ public class Cooperativa {
 		materiales = new HashMap<Material, Float>() ; 
 	}
 
+	public void menu(int i) {
+		switch (i) {
+		case 1: 
+		case 2:
+		case 3: 
+		}
+		
+	}
+	
+	
+	
 	public void agregarSolicitud(SolicitudRetiro r) {
 		solicitudes.add(r);
 	}
@@ -49,6 +61,7 @@ public class Cooperativa {
 	}
 	
 	//TENEMOS QUE REPENZAR ESTO PORQUE COMO HACEMOS PARA TENER LOS PORCENTAJES DE LOS CARTONEROS.
+	// Opcion: El cartonero Default se distribuye entre todos los demas. (La mejor que encontramos)  
 	public void AgregarMaterial(Material m, Float cantidad) {
 		if (materiales.containsKey(m)) {
 			materiales.put(m, materiales.get(m)+ cantidad) ; 
@@ -59,4 +72,6 @@ public class Cooperativa {
 	public void BorrarMaterial(Material m) {
 		materiales.remove(m) ; 
 	}
+
+	
 }

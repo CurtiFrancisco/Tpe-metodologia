@@ -1,3 +1,4 @@
+package Cooperativa;
 
 public class SolicitudRetiro {
 	
