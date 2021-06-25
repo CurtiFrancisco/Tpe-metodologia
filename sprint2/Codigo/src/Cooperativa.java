@@ -3,13 +3,21 @@ import java.util.HashMap;
 
 public class Cooperativa {
 
-	// ArrayList<>
+	
 
 	private ArrayList<SolicitudRetiro> solicitudes;
 	private CarteleraVirtual cartelera;
-	private HashMap<String, Cartonero> cartoneros ; 
+	private HashMap<String, Cartonero> cartoneros ;
+	private HashMap<Material,Float> materiales ;
 	private String Secretaria, password; // Referente a usuario y contraseña de secretaria
 	private float x, y;
+	
+	public Cooperativa() {
+		solicitudes = new ArrayList<SolicitudRetiro>() ; 
+		cartelera = new CarteleraVirtual() ; 
+		cartoneros = new HashMap<String, Cartonero>() ; 
+		materiales = new HashMap<Material, Float>() ; 
+	}
 
 	public void agregarSolicitud(SolicitudRetiro r) {
 		solicitudes.add(r);
@@ -40,4 +48,15 @@ public class Cooperativa {
 		cartoneros.remove(dni);
 	}
 	
+	//TENEMOS QUE REPENZAR ESTO PORQUE COMO HACEMOS PARA TENER LOS PORCENTAJES DE LOS CARTONEROS.
+	public void AgregarMaterial(Material m, Float cantidad) {
+		if (materiales.containsKey(m)) {
+			materiales.put(m, materiales.get(m)+ cantidad) ; 
+		}else
+			materiales.put(m, cantidad) ; 
+	}
+	
+	public void BorrarMaterial(Material m) {
+		materiales.remove(m) ; 
+	}
 }
