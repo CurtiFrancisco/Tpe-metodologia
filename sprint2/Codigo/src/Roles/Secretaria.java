@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import Cooperativa.Cooperativa;
+import Cooperativa.Material;
 
 public class Secretaria extends Rol {
 
@@ -13,10 +14,11 @@ public class Secretaria extends Rol {
 	}
 
 	
-	//ES UN MODELO; NO NOS MATES GUILLE gracias. 
+	
 	
 	public void Menu(Cooperativa c) {
 		
+		//ES UN MODELO; NO NOS MATES GUILLE gracias. 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)) ; 
 		String reader = " ";
 		try {
@@ -27,9 +29,10 @@ public class Secretaria extends Rol {
 		int x = Integer.parseInt(reader) ;  
 		switch (x) {
 			
-		case 1 : c.menu(1) ;  
-		case 2 : c.menu(2) ; 
-		case 3 : 
+		case 1 : c.menu(1) ; //this.AgregarCartonero(null, null, null, null, 0);
+		case 2 : c.menu(2) ; //this.EliminarCartonero(null);
+		case 3 : c.menu(3) ; //this.AgregarMaterial(new Material(null, null), null);
+		case 4 : c.menu(4) ; //this.BorrarMaterial(null);
 		break ; 
 		
 		}
