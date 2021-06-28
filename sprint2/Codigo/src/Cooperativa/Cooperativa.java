@@ -10,7 +10,7 @@ public class Cooperativa {
 	private HashMap<Material,Float> materiales ;
 	private Cartonero ciudadanoBuenaOnda ; 
 	
-	private String Secretaria, password; // Referente a usuario y contraseña de secretaria
+	private String Secretaria, password; // Referente a usuario y contraseÃ±a de secretaria
 	private float x, y;
 	
 	
@@ -23,7 +23,7 @@ public class Cooperativa {
 	}
 
 	public void menu(int i) {
-		switch (i) {  //Por ahora los dejamos todos en null. Nos gustar�a que funcione con paginas prehechas para cargar datos. 
+		switch (i) {  //Por ahora los dejamos todos en null. Nos gustaría que funcione con paginas prehechas para cargar datos. 
 		case 1:  this.AgregarCartonero(null, null, null, null, 0);
 		case 2:  this.EliminarCartonero(null);
 		case 3:  this.AgregarMaterial(new Material(null, null), null);
@@ -56,30 +56,30 @@ public class Cooperativa {
 	}
 	
 	//Funcion de la secretaria, por ahora es la unica. Funcion 1. 
-	public void AgregarCartonero(String nombre, String apellido, String direccion, 
+	public void agregarCartonero(String nombre, String apellido, String direccion, 
 			String dni, int capacidadTransporte) {
 		cartoneros.put(dni, new Cartonero(nombre,apellido,direccion,dni,capacidadTransporte)) ; 
 	}
 	
 	//Funcion de la secretaria, por ahora es la 2. 
-	public void EliminarCartonero( String dni) {
+	public void eliminarCartonero( String dni) {
 		cartoneros.remove(dni);
 	}
 	
 	//Funcion 3  
-	public void AgregarMaterial(Material m, Float cantidad) {
+	public void agregarMaterial(Material m, Float cantidad) {
 		if (materiales.containsKey(m)) {
 			materiales.put(m, materiales.get(m)+ cantidad) ; 
 		}else
 			materiales.put(m, cantidad) ; 
 	}
 	//funcion 4 del menu
-	public void BorrarMaterial(Material m) {
+	public void borrarMaterial(Material m) {
 		materiales.remove(m) ; 
 	}
 	
 	//Retorna el porcentaje total del material, sirve para calcular otros porcentajes 
-	public float PorcentajeMaterial(Material m) {
+	public float porcentajeMaterial(Material m) {
 		if (materiales.containsKey(m)) {
 			return materiales.get(m) ; 
 		}
