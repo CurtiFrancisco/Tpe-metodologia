@@ -25,11 +25,18 @@ public class Cooperativa {
 
 	public void menu(int i) {
 		switch (i) {  //Por ahora los dejamos todos en null. Nos gustaría que funcione con paginas prehechas para cargar datos. 
-		case 1:  InterfazVisual.agregarCartonero(this);
-		case 2:  InterfazVisual.eliminarCartonero(this);
-		case 3:  InterfazVisual.agregarMaterial(this);
-		case 4:  InterfazVisual.borrarMaterial(this);
-		break ; 
+			case 1:  
+					InterfazVisual.agregarCartonero(this); 
+					break ;
+			case 2: 
+					InterfazVisual.eliminarCartonero(this);
+					break ;
+			case 3: 
+					InterfazVisual.agregarMaterial(this);
+					break ;
+			case 4:  
+					InterfazVisual.borrarMaterial(this);
+					break ; 
 		}
 		
 	}
@@ -59,7 +66,7 @@ public class Cooperativa {
 	//Funcion de la secretaria, por ahora es la unica. Funcion 1. 
 	public void agregarCartonero(String nombre, String apellido, String direccion, 
 			String dni, int capacidadTransporte) {
-		cartoneros.put(dni, new Cartonero(nombre,apellido,direccion,dni,capacidadTransporte)) ; 
+		cartoneros.put(dni, new Cartonero(nombre,apellido,direccion,dni,capacidadTransporte)) ;
 	}
 	
 	//Funcion de la secretaria, por ahora es la 2. 
@@ -77,6 +84,10 @@ public class Cooperativa {
 	//funcion 4 del menu
 	public void borrarMaterial(Material m) {
 		materiales.remove(m) ; 
+		for( String c : cartoneros.keySet()) {
+			Cartonero cartonero = cartoneros.get(c) ; 
+			cartonero.eliminarMaterial(m) ;
+		}
 	}
 	
 	//Retorna el porcentaje total del material, sirve para calcular otros porcentajes 

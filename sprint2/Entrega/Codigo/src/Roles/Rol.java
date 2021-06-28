@@ -13,4 +13,8 @@ public abstract class Rol {
 
 	public abstract void menu(Cooperativa c) ;
 	
+	public String getNombre() {
+		return nombre ; 
+	}
+	
 }

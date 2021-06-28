@@ -37,23 +37,26 @@ public class InterfazVisual {
 	}
 
 	public static void eliminarCartonero(Cooperativa cooperativa) {
+		System.out.println("Ingrese el Dni del cartonero a eliminar: ");
 		String dni = ingresarDato();
 		cooperativa.eliminarCartonero(dni);
 	}
 
 	public static void agregarMaterial(Cooperativa c) {
-		System.out.println("Ingrese el nombre: ");
+		System.out.println("Ingrese el nombre del material: ");
 		String nombre = ingresarDato() ; 
-		System.out.println("Ingrese el descripcion: ");
+		System.out.println("Ingrese una descripcion: ");
 		String descripcion = ingresarDato() ; 
-		System.out.println("Ingrese el Cantidad: ");
+		System.out.println("Ingrese la cantidad de la balanza: ");
 		String cantidad = ingresarDato();
 		int cant = Integer.parseInt(cantidad);
 		c.agregarMaterial(new Material(nombre, descripcion), cant);
 	}
 
 	public static void borrarMaterial(Cooperativa c) {
+		System.out.println("Ingrese el nombre del material: ");
 		String nombre = ingresarDato() ; 
+		System.out.println("Ingrese una descripcion: ");
 		String descripcion = ingresarDato() ;
 		c.borrarMaterial(new Material(nombre, descripcion));
 	}
@@ -61,8 +64,9 @@ public class InterfazVisual {
 	public static void main(String[] args) {
 		Cooperativa c = new Cooperativa();
 		Secretaria s = new Secretaria("Maria") ; 
+		
 		s.menu(c);
-
+		System.out.println("El programa Finaliza");
 	}
 
 }

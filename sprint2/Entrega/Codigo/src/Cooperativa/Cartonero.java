@@ -82,6 +82,11 @@ public class Cartonero {
 	public String toString() {
 		return "Cartonero [nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + "]";
 	}
+
+
+	public void eliminarMaterial(Material m) {
+		materiales.remove(m) ;
+	}
 	
 	
 	

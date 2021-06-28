@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 
 import Cooperativa.Cooperativa;
 import Cooperativa.Material;
+import Cooperativa.InterfazVisual;
 
 public class Secretaria extends Rol {
 
@@ -14,29 +15,36 @@ public class Secretaria extends Rol {
 	}
 
 	
-	
-	
 	public void menu(Cooperativa c) {
-		
-		//ES UN MODELO; NO NOS MATES GUILLE gracias. 
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)) ; 
-		String reader = " ";
-		try {
-			reader = br.readLine();
-		} catch (IOException e) {
-			e.printStackTrace(); //No deberia hacer nada, si no le escriben un numero. 
-		} 
-		int x = Integer.parseInt(reader) ;  
-		switch (x) {
-			
-		case 1 : c.menu(1) ; //this.AgregarCartonero(null, null, null, null, 0);
-		case 2 : c.menu(2) ; //this.EliminarCartonero(null);
-		case 3 : c.menu(3) ; //this.AgregarMaterial(new Material(null, null), null);
-		case 4 : c.menu(4) ; //this.BorrarMaterial(null);
-		break ; 
-		
+		int x = 0 ; 
+		while(x >= 0 && x < 5) {
+			System.out.println("Menu Secretaria " + super.getNombre() );
+			System.out.println(" 1. Agregar Cartonero \n 2. EliminarCartonero "
+					+ "\n 3.AgregarMaterial \n 4.BorrarMaterial \n 5.Salir");
+
+			String	reader = InterfazVisual.ingresarDato() ;
+			x = Integer.parseInt(reader) ;  
+			switch (x) {  
+				case 1 : 
+					c.menu(1) ;
+					System.out.println("Registrado");
+					break; 
+				case 2 : 
+					c.menu(2) ;
+					System.out.println("Borrado");
+					break;
+				case 3 : 
+					c.menu(3) ;
+					System.out.println("Registrado nuevo Material");
+					break;
+				case 4 : 
+					c.menu(4) ; 
+					System.out.println("El material ha sido eliminado de la cooperativa");
+					break ; 
+			}
 		}
-		
 	}
+
+
 
 }
