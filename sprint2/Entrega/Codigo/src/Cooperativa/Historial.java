@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Historial {
 	
-	ArrayList<Entrega> entregas ; 
+	private ArrayList<Entrega> entregas ; 
 		
 	
 	public Historial() {
