@@ -57,17 +57,17 @@ public class Cartonero {
 		this.capacidadTransporte = capacidadTransporte;
 	} 
 	
-	public void AgregarMaterial(Material m, Float cantidad, Cooperativa c) {
+	public void agregarMaterial(Material m, Float cantidad, Cooperativa c) {
 		if (materiales.containsKey(m)) {
 			materiales.put(m, materiales.get(m)+ cantidad) ; 
 		}else
 			materiales.put(m, cantidad) ;
 		
-		c.AgregarMaterial(m, cantidad); //Este suma al balance total. 
+		c.agregarMaterial(m, cantidad); //Este suma al balance total. 
 	}
 	
-	public float Porcentaje(Material m, Cooperativa c) {
-		return (materiales.get(m) / c.PorcentajeMaterial(m)) + c.retribucionBuenaOnda(m);  
+	public float porcentaje(Material m, Cooperativa c) {
+		return (materiales.get(m) / c.porcentajeMaterial(m)) + c.retribucionBuenaOnda(m);  
 	}
 	
 	
