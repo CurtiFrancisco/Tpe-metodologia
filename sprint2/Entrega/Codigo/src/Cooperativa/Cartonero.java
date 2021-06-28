@@ -64,13 +64,9 @@ public class Cartonero {
 			materiales.put(m, materiales.get(m)+ cantidad) ; 
 		}else
 			materiales.put(m, cantidad) ;
-		
-<<<<<<< HEAD:sprint2/Entrega/Codigo/src/Cooperativa/Cartonero.java
 		c.agregarMaterial(m, cantidad); //Este suma al balance total.
 		historial.addEntrega(LocalDate.now(), cantidad, m); //Con esto registramos la entrega
-=======
-		c.agregarMaterial(m, cantidad); //Este suma al balance total. 
->>>>>>> c1b46cc65b1f6ac0056d5d6c8ac43590d825a3f5:sprint2/Codigo/src/Cooperativa/Cartonero.java
+
 	}
 	
 	public float porcentaje(Material m, Cooperativa c) {
