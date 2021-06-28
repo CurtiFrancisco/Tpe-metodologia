@@ -16,7 +16,7 @@ public class Secretaria extends Rol {
 	
 	
 	
-	public void Menu(Cooperativa c) {
+	public void menu(Cooperativa c) {
 		
 		//ES UN MODELO; NO NOS MATES GUILLE gracias. 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)) ; 
