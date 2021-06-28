@@ -1,9 +1,11 @@
 package Cooperativa;
+import java.time.LocalDate;
 import java.util.HashMap;
 
 public class Cartonero {
 
-	private HashMap<Material,Float> materiales ;
+	protected HashMap<Material,Float> materiales ;
+	private Historial historial ; 
 	private String nombre, apellido, direccion, dni ; 
 	private int capacidadTransporte;
 	
@@ -57,18 +59,30 @@ public class Cartonero {
 		this.capacidadTransporte = capacidadTransporte;
 	} 
 	
-	public void AgregarMaterial(Material m, Float cantidad, Cooperativa c) {
+	public void agregarMaterial(Material m, Float cantidad, Cooperativa c) {
 		if (materiales.containsKey(m)) {
 			materiales.put(m, materiales.get(m)+ cantidad) ; 
 		}else
 			materiales.put(m, cantidad) ;
 		
-		c.AgregarMaterial(m, cantidad); //Este suma al balance total. 
+		c.agregarMaterial(m, cantidad); //Este suma al balance total.
+		historial.addEntrega(LocalDate.now(), cantidad, m); //Con esto registramos la entrega
 	}
 	
-	public float Porcentaje(Material m, Cooperativa c) {
-		return (materiales.get(m) / c.PorcentajeMaterial(m)) + c.retribucionBuenaOnda(m);  
+	public float porcentaje(Material m, Cooperativa c) {
+		return (materiales.get(m) / c.porcentajeMaterial(m)) + c.retribucionBuenaOnda(m);  
 	}
+	
+	public void verHistorial() {
+		historial.toString() ; 
+	}
+
+
+	@Override
+	public String toString() {
+		return "Cartonero [nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + "]";
+	}
+	
 	
 	
 }

@@ -8,7 +8,8 @@ public class Cooperativa {
 	private CarteleraVirtual cartelera;
 	private HashMap<String, Cartonero> cartoneros ;
 	private HashMap<Material,Float> materiales ;
-	private Cartonero ciudadanoBuenaOnda ; 
+	private CiudadanoBuenaOnda ciudadanoBuenaOnda ; 
+	
 	
 	private String Secretaria, password; // Referente a usuario y contraseÃ±a de secretaria
 	private float x, y;
@@ -19,15 +20,15 @@ public class Cooperativa {
 		cartelera = new CarteleraVirtual() ; 
 		cartoneros = new HashMap<String, Cartonero>() ; 
 		materiales = new HashMap<Material, Float>() ;
-		ciudadanoBuenaOnda = new Cartonero("Ciudadano","BuenaOnda"," ","0",0 ) ; //Creamos el cartonero Default 
+		ciudadanoBuenaOnda = new CiudadanoBuenaOnda() ; //Creamos el cartonero Default 
 	}
 
 	public void menu(int i) {
 		switch (i) {  //Por ahora los dejamos todos en null. Nos gustaría que funcione con paginas prehechas para cargar datos. 
-		case 1:  this.AgregarCartonero(null, null, null, null, 0);
-		case 2:  this.EliminarCartonero(null);
-		case 3:  this.AgregarMaterial(new Material(null, null), null);
-		case 4:  this.BorrarMaterial(null);
+		case 1:  InterfazVisual.agregarCartonero(this);
+		case 2:  InterfazVisual.eliminarCartonero(this);
+		case 3:  InterfazVisual.agregarMaterial(this);
+		case 4:  InterfazVisual.borrarMaterial(this);
 		break ; 
 		}
 		
@@ -56,30 +57,30 @@ public class Cooperativa {
 	}
 	
 	//Funcion de la secretaria, por ahora es la unica. Funcion 1. 
-	public void AgregarCartonero(String nombre, String apellido, String direccion, 
+	public void agregarCartonero(String nombre, String apellido, String direccion, 
 			String dni, int capacidadTransporte) {
 		cartoneros.put(dni, new Cartonero(nombre,apellido,direccion,dni,capacidadTransporte)) ; 
 	}
 	
 	//Funcion de la secretaria, por ahora es la 2. 
-	public void EliminarCartonero( String dni) {
+	public void eliminarCartonero(String dni) {
 		cartoneros.remove(dni);
 	}
 	
 	//Funcion 3  
-	public void AgregarMaterial(Material m, Float cantidad) {
+	public void agregarMaterial(Material m, float cantidad) {
 		if (materiales.containsKey(m)) {
 			materiales.put(m, materiales.get(m)+ cantidad) ; 
 		}else
 			materiales.put(m, cantidad) ; 
 	}
 	//funcion 4 del menu
-	public void BorrarMaterial(Material m) {
+	public void borrarMaterial(Material m) {
 		materiales.remove(m) ; 
 	}
 	
 	//Retorna el porcentaje total del material, sirve para calcular otros porcentajes 
-	public float PorcentajeMaterial(Material m) {
+	public float porcentajeMaterial(Material m) {
 		if (materiales.containsKey(m)) {
 			return materiales.get(m) ; 
 		}
@@ -88,6 +89,6 @@ public class Cooperativa {
 	
 	//Retorna puntualmente el porcentaje del cartonero Default, lo usamos para calcular retribuciones.
 	public float retribucionBuenaOnda(Material m) {
-		return ciudadanoBuenaOnda.Porcentaje(m, this) / cartoneros.size() ; 
+		return ciudadanoBuenaOnda.porcentaje(m, this) / cartoneros.size() ; 
 	}
 }
