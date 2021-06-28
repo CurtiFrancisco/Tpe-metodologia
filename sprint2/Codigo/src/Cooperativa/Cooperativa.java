@@ -24,10 +24,10 @@ public class Cooperativa {
 
 	public void menu(int i) {
 		switch (i) {  //Por ahora los dejamos todos en null. Nos gustaría que funcione con paginas prehechas para cargar datos. 
-		case 1:  this.AgregarCartonero(null, null, null, null, 0);
-		case 2:  this.EliminarCartonero(null);
-		case 3:  this.AgregarMaterial(new Material(null, null), null);
-		case 4:  this.BorrarMaterial(null);
+		case 1:  this.agregarCartonero(null, null, null, null, 0);
+		case 2:  this.eliminarCartonero(null);
+		case 3:  this.agregarMaterial(new Material(null, null), null);
+		case 4:  this.borrarMaterial(null);
 		break ; 
 		}
 		
@@ -88,6 +88,6 @@ public class Cooperativa {
 	
 	//Retorna puntualmente el porcentaje del cartonero Default, lo usamos para calcular retribuciones.
 	public float retribucionBuenaOnda(Material m) {
-		return ciudadanoBuenaOnda.Porcentaje(m, this) / cartoneros.size() ; 
+		return ciudadanoBuenaOnda.porcentaje(m, this) / cartoneros.size() ; 
 	}
 }
