@@ -11,6 +11,6 @@ public abstract class Rol {
 	}
 	
 
-	public abstract void Menu(Cooperativa c) ;
+	public abstract void menu(Cooperativa c) ;
 	
 }
