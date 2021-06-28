@@ -4,9 +4,9 @@ import java.time.LocalDate;
 
 public class Entrega {
 	
-	LocalDate fechaEntrega ; 
-	Material m ; 
-	Float cantidad ;
+	private LocalDate fechaEntrega ; 
+	private Material m ; 
+	private Float cantidad ;
 
 	public Entrega(LocalDate fechaEntrega, Material m, float cantidad) {
 		this.fechaEntrega = fechaEntrega;
